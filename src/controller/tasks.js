@@ -51,7 +51,6 @@ export const createTask = async (req, res) => {
 export const deleteTask = async (req, res) => {
   const connection = await connect();
   await connection.query('DELETE FROM tasks WHERE id = ?', [req.params.id])
-  res.sendStatus(204);
   res.send("sucess");
 }
 
